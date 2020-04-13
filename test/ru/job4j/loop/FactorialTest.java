@@ -21,4 +21,12 @@ public class FactorialTest {
         int rsl = Factorial.calc(0);
         assertThat(expected, is(1));
     }
+
+    @Test
+    public void whenCalculateFactorialForOneThenOne() {
+        //напишите здесь тест, проверяющий, что факториал для числа 0 равен 1.
+        int expected = 1;
+        int rsl = Factorial.calc(1);
+        assertThat(expected, is(1));
+    }
 }
