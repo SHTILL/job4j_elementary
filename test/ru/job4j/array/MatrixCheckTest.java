@@ -1,7 +1,9 @@
 package ru.job4j.array;
 
 import org.junit.Test;
-import static org.hamcrest.core.Is.is;
+
+import static org.hamcrest.core.Is.*;
+import static org.hamcrest.core.IsNot.*;
 import static org.junit.Assert.assertThat;
 
 public class MatrixCheckTest {
@@ -49,5 +51,29 @@ public class MatrixCheckTest {
         };
         boolean result = MatrixCheck.monoVertical(input, 2);
         assertThat(result, is(false));
+    }
+
+    @Test
+    public void whenDiagonal() {
+        char[][] input = {
+                {'X', ' ', ' '},
+                {' ', 'Y', ' '},
+                {' ', ' ', 'Z'},
+        };
+        char[] result = MatrixCheck.extractDiagonal(input);
+        char[] expect = {'X', 'Y', 'Z'};
+        assertThat(result, is(expect));
+    }
+
+    @Test
+    public void whenNotDiagonal() {
+        char[][] input = {
+                {'X', ' ', ' '},
+                {' ', 'T', ' '},
+                {' ', ' ', 'Z'},
+        };
+        char[] result = MatrixCheck.extractDiagonal(input);
+        char[] expect = {'X', 'Y', 'Z'};
+        assertThat(result, is(not(expect)));
     }
 }
