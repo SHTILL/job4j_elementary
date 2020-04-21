@@ -7,12 +7,10 @@ public class PointTest {
 
     @Test
     public void whenCoordinatesX2Y2andX0Y0ThenDistanceIsAround3() {
-        int inX1 = 2;
-        int inY1 = 2;
-        int inX2 = 0;
-        int inY2 = 0;
+        Point p1 = new Point(2, 2);
+        Point p2 = new Point(0, 0);
         double expected = 2.83;
-        double rsl = Point.distance(inX1, inY1, inX2, inY2);
+        double rsl = p1.distance(p2);
         Assert.assertEquals(expected, rsl, 0.01);
     }
 }
