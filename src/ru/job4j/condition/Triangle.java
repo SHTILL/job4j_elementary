@@ -40,9 +40,9 @@ public class Triangle {
      */
     public double area() {
         double rsl = -1;
-        double a = first.distance(second);
-        double b = first.distance(third);
-        double c = second.distance(third);
+        double a = first.distance3D(second);
+        double b = first.distance3D(third);
+        double c = second.distance3D(third);
         double p = perimeter(a, b, c);
         if (this.exist(a, b, c)) {
             rsl = Math.sqrt(p * (p - a) * (p - b) * (p - c));

@@ -19,14 +19,18 @@ public class Point {
         this.z = z;
     }
 
-    public double distance(Point that) {
+    public double distance2D(Point that) {
+        return Math.sqrt(Math.pow(this.x - that.x, 2) + Math.pow(this.y - that.y, 2));
+    }
+
+    public double distance3D(Point that) {
         return Math.sqrt(Math.pow(this.x - that.x, 2) + Math.pow(this.y - that.y, 2) + Math.pow(this.z - that.z, 2));
     }
 
     public static void main(String[] args) {
         Point a = new Point(0, 0);
         Point b = new Point(0, 2);
-        double dist = a.distance(b);
+        double dist = a.distance2D(b);
         System.out.println(dist);
     }
 }
