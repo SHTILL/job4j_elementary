@@ -11,7 +11,6 @@ public class Point {
     public Point(int first, int second) {
         this.x = first;
         this.y = second;
-        this.z = 0;
     }
 
     public Point(int x, int y, int z) {
