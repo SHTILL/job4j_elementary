@@ -1,19 +1,19 @@
 package ru.job4j.oop.encapsulation;
 
 public class Config {
-    String name;
-    protected int position;
-    public String[] properties;
+    private String name;
+    private int position;
+    private String[] properties;
 
     public Config(String name) {
         this.name = name;
     }
 
-    void print() {
+    public void print() {
         System.out.println(position);
     }
 
-    protected String getProperty(String key) {
+    public String getProperty(String key) {
         return search(key);
     }
 
