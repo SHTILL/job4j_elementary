@@ -11,6 +11,6 @@ public class Animal {
     public Animal(String name) {
         super();
         this.name = name;
-        System.out.println("Animal");
+        System.out.println("Animal " + name);
     }
 }

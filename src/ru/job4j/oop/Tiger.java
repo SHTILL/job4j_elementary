@@ -6,7 +6,12 @@ public class Tiger extends Predator {
         System.out.println("Tiger");
     }
 
+    public Tiger(String name) {
+        super(name);
+        System.out.println("Tiger " + name);
+    }
+
     static public void main(String[] args) {
-        Tiger t = new Tiger();
+        Tiger t = new Tiger("Sharhan");
     }
 }
