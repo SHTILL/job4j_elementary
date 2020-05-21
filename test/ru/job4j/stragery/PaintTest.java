@@ -32,7 +32,6 @@ public class PaintTest {
     @Test
     public void whenDrawSquare() {
         new Paint().draw(new Square());
-        // проверяем результат вычисления
         assertThat(
                 new String(out.toByteArray()),
                 is(
@@ -44,8 +43,6 @@ public class PaintTest {
                                 .toString()
                 )
         );
-        // возвращаем обратно стандартный вывод в консоль.
-        System.setOut(stdout);
     }
 
     @Test
@@ -62,7 +59,5 @@ public class PaintTest {
                                 .toString()
                 )
         );
-        // возвращаем обратно стандартный вывод в консоль.
-        System.setOut(stdout);
     }
 }
