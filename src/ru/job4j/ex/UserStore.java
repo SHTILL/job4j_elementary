@@ -12,8 +12,11 @@ public class UserStore {
     }
 
     public static boolean validate(User user) throws UserInvalidException {
-        if (!user.isValid() || user.getUsername().length() < 3) {
+        if (!user.isValid()) {
             throw new UserInvalidException("User is invalid");
+        }
+        if (user.getUsername().length() < 3) {
+            throw new UserInvalidException("Login should be at least 3 characters");
         }
         return true;
     }
@@ -33,9 +36,9 @@ public class UserStore {
                     System.out.println("User " + user.getUsername() + " has an access");
                 }
             } catch (UserInvalidException e) {
-                System.out.println("User " + login + " doesn't have an access");
+                System.out.println("User " + login + " doesn't have an access. Cause: " + e.getMessage());
             } catch (UserNotFoundException e) {
-                System.out.println("User " + login +  " is not found");
+                System.out.println("User " + login +  " is not found. Cause: " + e.getMessage());
             } catch (Exception e) {
                 e.printStackTrace();
             }
